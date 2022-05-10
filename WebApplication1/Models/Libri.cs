@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApplication2.NewFolder
+namespace WebApplication1.Models
 {
     public class Libri
     {

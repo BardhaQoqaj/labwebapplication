@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
-using WebApplication2.NewFolder;
+using WebApplication1.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 
-namespace WebApplication2.Controllers
+namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
