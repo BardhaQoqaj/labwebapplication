@@ -44,7 +44,7 @@ namespace WebApplication1.Controllers
                     myCon.Close();
                 }
             }
-            return new JsonResult("Added Successfully");
+            return new JsonResult(table);
         }
         [HttpPost]
         public JsonResult Post(Kategoria kat)
@@ -62,7 +62,7 @@ namespace WebApplication1.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@DEmriKategorise", kat.EmriKategorise);
+                    myCommand.Parameters.AddWithValue("@EmriKategorise", kat.EmriKategorise);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
                     myReader.Close();
@@ -78,7 +78,7 @@ namespace WebApplication1.Controllers
             string query = @"
                            update Kategoria
                            set EmriKategorise= @EmriKategorise
-                            where Kategoria_Id=@Kategoria_Id
+                            where Kategoria_ID=@Kategoria_ID
                             ";
 
             DataTable table = new DataTable();
@@ -89,7 +89,7 @@ namespace WebApplication1.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@Kategoria_Id", kat.Kategoria_ID);
+                    myCommand.Parameters.AddWithValue("@Kategoria_ID", kat.Kategoria_ID);
                     myCommand.Parameters.AddWithValue("@EmriKategorise", kat.EmriKategorise);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
@@ -105,7 +105,7 @@ namespace WebApplication1.Controllers
         {
             string query = @"
                            delete from Kategoria
-                            where Kategoria_Id=@Kategoria_Id
+                            where Kategoria_ID=@Kategoria_ID
                             ";
 
             DataTable table = new DataTable();
@@ -116,7 +116,7 @@ namespace WebApplication1.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@Kategoria_Id", id);
+                    myCommand.Parameters.AddWithValue("@Kategoria_ID", id);
 
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
@@ -127,7 +127,5 @@ namespace WebApplication1.Controllers
 
             return new JsonResult("Deleted Successfully");
         }
-
     }
 }
-
