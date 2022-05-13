@@ -51,7 +51,7 @@ namespace WebApplication1.Controllers
         {
             string query = @"
                            insert into Kategoria
-                           values (@EmriKategorie)
+                           values (@EmriKategorise)
                             ";
 
             DataTable table = new DataTable();
