@@ -3,7 +3,7 @@ import {Form} from 'react-bootstrap';
 import {Modal} from 'reactstrap';
 import './style.css';
 
-export class EditAutor extends Component{
+export class EditPagesOnline extends Component{
     constructor(props){
         super(props);
         this.handleSubmit=this.handleSubmit.bind(this);
@@ -11,16 +11,15 @@ export class EditAutor extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-        fetch("http://localhost:5000/api/autor",{
+        fetch("http://localhost:5000/api/PagesaOnline",{
         method:"PUT",
         headers:{
             'Accept':'application/json',
             'Content-Type':'application/json'
         },
         body:JSON.stringify({
-            ID:event.target.ID.value,
-            name:event.target.name.value,
-            libri:event.target.libri.value
+            id:event.target.id.value,
+            NrKarteles:event.target.NrKarteles.value
         })
     })
     .then(res=>res.json())
@@ -38,41 +37,33 @@ export class EditAutor extends Component{
                     <div className="container">
                         <div className="modal-content" >
                             <div className="modal-header">
-                                <h3 className="modal-title">Edit this Autor</h3>
+                                <h3 className="modal-title">Edit this Pages Online</h3>
                             </div>
                             <div className="modal-mody">
                                 <Form onSubmit={this.handleSubmit}>
 
                                     <div className="rows">
-                                                <Form.Group controlId="ID">
-                                                    <Form.Label>ID</Form.Label>
-                                                    <Form.Control type="text" name="ID" 
+                                    <Form.Group controlId="id">
+                                                    <Form.Label>id</Form.Label>
+                                                    <Form.Control type="text" name="id" 
                                                     required disabled 
-                                                    defaultValue={this.props.auid}
-                                                    placeholder="ID"/>
+                                                    defaultValue={this.props.paoid}
+                                                    placeholder="id"/>
                                                 </Form.Group>
 
-                                                <Form.Group controlId="name">
-                                                    <Form.Label>name</Form.Label>
-                                                    <Form.Control type="text" name="name" 
+                                                <Form.Group controlId="NrKarteles">
+                                                    <Form.Label>NrKarteles</Form.Label>
+                                                    <Form.Control type="text" name="NrKarteles" 
                                                     required 
-                                                    defaultValue={this.props.auname}
-                                                    placeholder="name"/>
-                                                </Form.Group>
-
-                                                <Form.Group controlId="libri">
-                                                    <Form.Label>libri</Form.Label>
-                                                    <Form.Control type="text" name="libri" 
-                                                    required 
-                                                    defaultValue={this.props.aulibri}
-                                                    placeholder="libri"/>
+                                                    defaultValue={this.props.paoNrKarteles}
+                                                    placeholder="NrKarteles"/>
                                                 </Form.Group>
 
                                     </div>
 
                                                 <Form.Group>
                                                     <button variant="primary" type="submit">
-                                                        Update Autor
+                                                        Update Pages Online
                                                     </button>
                                                 </Form.Group>
 

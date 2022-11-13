@@ -1,0 +1,79 @@
+import React, {Component} from 'react'
+// import { StatesContainer, StateH1, StateH2,
+//         StateIcon, StateP, StatesCard, StatesWrapper,
+//         CityP, StateIdP, OptionsP } from './StateElements'
+
+import { Button, ButtonToolbar } from 'react-bootstrap'
+
+import { AddTransport } from './AddTransport'
+import { Transporti } from './Transporti'
+
+export class Transportet extends Component {
+    
+    constructor(props){
+        super(props);
+
+        this.state = {
+            transporti : [],
+            isModalOpen : false,
+            isEditModalOpen : false
+        };
+    }
+
+    //Fetching db data
+    refreshList(){
+        fetch("http://localhost:5000/api/Transporti")
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({transporti:data});
+        });
+    }
+
+    componentDidMount(){
+        this.refreshList();
+    }
+    // componentDidUpdate(){
+    //     this.refreshList();
+    // }
+    
+    toggleUserModal = ()=>{
+        this.setState((state)=>{
+            return{
+                isModalOpen: !state.isModalOpen
+            }
+        })
+    }
+
+    render(){
+        const {transporti,tid,tSasia,tlloji}=this.state;
+
+    return (
+    <div>
+    <div id="states">
+        <div>
+
+            {transporti.map(t =>
+                <Transporti key={t.id}  
+                id={t.id} 
+                Sasia={t.Sasia}
+                lloji={t.lloji} 
+                >
+                </Transporti>
+            )} 
+
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Transport </Button>
+                  {this.state.isModalOpen ? 
+                  <AddTransport onClose={this.toggleUserModal}
+                  tid={tid}
+                  tlloji={tlloji}
+                  tSasia={tSasia}
+                  />
+                  :''}
+                
+        </div> 
+        
+    </div>
+    </div>
+    )
+}
+}

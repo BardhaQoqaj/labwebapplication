@@ -1,4 +1,4 @@
-import './App.css';
+/*import './App.css';
 import {Home} from './Home';
 import {Kategoria} from './Kategoria';
 import {Libri} from './Libri';
@@ -36,6 +36,21 @@ function App() {
         <Route path="/libri" element={<Libri/>}/>
       </Routes>
     </div>
+    </Router>
+  );
+}
+
+export default App;*/
+//import logo from './logo.svg';
+import './App.css';
+import Home from './pages';
+//import NavBar from './components/NavBar';
+import {BrowserRouter as Router} from 'react-router-dom'
+
+function App() {
+  return (
+    <Router>
+      <Home/>
     </Router>
   );
 }
