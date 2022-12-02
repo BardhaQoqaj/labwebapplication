@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
-
+import { CategoryContainer, CategoryWrapper
+} from './CategoryElements'
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
 import { AddPorosi } from './AddPorosi'
@@ -49,8 +47,8 @@ export class Porosit extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
+    <CategoryContainer id="states">
+        <CategoryWrapper>
 
             {porosia.map(p =>
                 <Porosia key={p.id}  
@@ -61,7 +59,7 @@ export class Porosit extends Component {
                 </Porosia>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Order </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:'100px'}}> Add Order </Button>
                   {this.state.isModalOpen ? 
                   <AddPorosi onClose={this.toggleUserModal}
                   pid={pid}
@@ -70,9 +68,9 @@ export class Porosit extends Component {
                   />
                   :''}
                 
-        </div> 
+                </CategoryWrapper> 
         
-    </div>
+        </CategoryContainer>
     </div>
     )
 }

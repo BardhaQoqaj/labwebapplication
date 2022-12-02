@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+import { CategoryContainer, CategoryWrapper} from './CategoryElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
@@ -49,8 +47,8 @@ export class Transportet extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
+     <CategoryContainer id="states">
+        <CategoryWrapper>
 
             {transporti.map(t =>
                 <Transporti key={t.id}  
@@ -61,7 +59,7 @@ export class Transportet extends Component {
                 </Transporti>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Transport </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:'130px'}}> Add Transport </Button>
                   {this.state.isModalOpen ? 
                   <AddTransport onClose={this.toggleUserModal}
                   tid={tid}
@@ -69,10 +67,9 @@ export class Transportet extends Component {
                   tSasia={tSasia}
                   />
                   :''}
-                
-        </div> 
+         </CategoryWrapper> 
         
-    </div>
+        </CategoryContainer>
     </div>
     )
 }

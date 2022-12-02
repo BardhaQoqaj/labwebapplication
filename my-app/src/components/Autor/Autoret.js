@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+import { CategoryContainer, CategoryWrapper,
+} from './CategoryElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
@@ -49,8 +48,8 @@ export class Autoret extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
+    <CategoryContainer id="states">
+        <CategoryWrapper>
 
             {autor.map(au =>
                 <Autor key={au.Id}  
@@ -61,7 +60,7 @@ export class Autoret extends Component {
                 </Autor>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Author </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:'100px'}}> Add Author </Button>
                   {this.state.isModalOpen ? 
                   <AddAutor onClose={this.toggleUserModal}
                   auId={auId}
@@ -70,9 +69,9 @@ export class Autoret extends Component {
                   />
                   :''}
                 
-        </div> 
+                </CategoryWrapper> 
         
-    </div>
+        </CategoryContainer>
     </div>
     )
 }

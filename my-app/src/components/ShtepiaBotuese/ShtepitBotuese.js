@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+import { CategoryContainer, CategoryWrapper
+} from './CategoryElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
@@ -49,8 +48,8 @@ export class ShtepitBotuese extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
+    <CategoryContainer id="states">
+        <CategoryWrapper>
 
             {shtepiabotuese.map(shb =>
                 <ShtepiaBotuese key={shb.id}  
@@ -60,7 +59,7 @@ export class ShtepitBotuese extends Component {
                 </ShtepiaBotuese>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Shtepi Botuese </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:'180px'}}> Add Shtepi Botuese </Button>
                   {this.state.isModalOpen ? 
                   <AddShtepiBotuese onClose={this.toggleUserModal}
                   shbid={shbid}
@@ -68,9 +67,9 @@ export class ShtepitBotuese extends Component {
                   />
                   :''}
                 
-        </div> 
+                </CategoryWrapper> 
         
-    </div>
+        </CategoryContainer>
     </div>
     )
 }

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import NavBar from '../components/NavBar'
 import {Routes, Route, BrowserRouter} from 'react-router-dom'
-//import { Autoret } from '../components/Autor/Autoret'
+import { Autoret } from '../components/Autor/Autoret'
 import { Importuesit } from '../components/Importuesi/Importuesit'
 import { Kategorit } from '../components/Kategoria/Kategorit'
 import { Lexuesit } from '../components/Lexuesi/Lexuesit'
@@ -29,10 +29,9 @@ const Home=()=> {
     <>
       <NavBar toggle={toggle}/>
       <HomePage/>
-      {/* <Autoret/>  */}
+       <Autoret/> 
       <Importuesit/>
       <Kategorit/>
-      {/* <Drejtimet/> */}
       <Lexuesit/>
       <Pagesat/>
       <PagesatFizike/>
@@ -44,6 +43,7 @@ const Home=()=> {
       <Transportet/>
       <Librat/>
       {/* <App/> */}
+      
       </>
     )
 }

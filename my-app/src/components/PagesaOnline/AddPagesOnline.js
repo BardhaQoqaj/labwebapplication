@@ -44,7 +44,7 @@ export class AddPagesOnline extends Component{
             <div className="container">
                 <div className="modal-content" >
                     <div className="modal-header">
-                        <h3 className="modal-title">Add a Pages Online</h3>
+                        <h3 className="modal-title">Shto nje Pages ne forme Online</h3>
                     </div>
                     <div className="modal-mody">
                         <Form onSubmit={this.handleSubmit}>

@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+ import { ImportuesiContainer, ImportuesH1, ImportuesiWrapper} from './ImportuesiElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
@@ -49,8 +47,9 @@ export class Importuesit extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
+    <ImportuesiContainer id="importuesit">
+      <ImportuesH1>All our materials are accessible thanks to our high quality importers</ImportuesH1>
+        <ImportuesiWrapper>
 
             {importuesi.map(i =>
                 <Importuesi key={i.id}  
@@ -61,7 +60,7 @@ export class Importuesit extends Component {
                 </Importuesi>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Importues </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:'150px'}}> Add Importues </Button>
                   {this.state.isModalOpen ? 
                   <AddImportues onClose={this.toggleUserModal}
                   iid={iid}
@@ -69,12 +68,12 @@ export class Importuesit extends Component {
                   iSasia={iSasia}
                   />
                   :''}
-                
+                  </ImportuesiWrapper>
+            </ImportuesiContainer>
 
         </div> 
         
-    </div>
-    </div>
+   
     )
 }
 }

@@ -1,19 +1,17 @@
+
 .container{
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
     background-color: rgba(0,0,0,0.5);
     display: flex;
     align-items: center;
     justify-content: center;
+   
 }
 
 .modal-content{
     width: 500px;
     background-color: #fff;
-    height: 310px;
+    height: 380px;
+    
 }
 
 .modal-header{
@@ -24,7 +22,7 @@
 .modal-footer{
     position: absolute;
     left: 930px;
-    bottom: 230px;
+    bottom: 200px;
 }
 
 .button{
@@ -79,7 +77,8 @@
     text-align: left;
     border: black ridge 1px;
     border-radius: 10px;
-    margin: 3px;
-    width: 20rem;
-    padding-left: 10px; 
+    margin: 0 auto; 
+    width: 100px;
+    padding-left: 50px; 
+    
 }

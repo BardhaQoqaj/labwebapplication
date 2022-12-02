@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+import { ImportuesiContainer, ImportuesH1, ImportuesH2,
+    ImportuesE, ImportuesCard, ImportuesiWrapper,
+    ImportuesS, ImportuesiIdP } from './ImportuesiElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 import { EditPagesFizike } from './EditPagesFizike';
@@ -41,15 +41,16 @@ export class PagesaFizike extends Component {
 
     render(){
         return (
-            <div className='holder'>
-                <div className="box" key={this.props.id}>
-                    <p>{this.props.PiniIKarteles}</p>
+            <div>
+                 <ImportuesCard>
+                <ImportuesiIdP key={this.props.id}/>
+                <ImportuesE>Pini juaj i karteles: {this.props.PiniIKarteles}</ImportuesE>
 
-                    
-                        <button className="mr-1" variant="info"
+                <ButtonToolbar>
+                        <Button className="mr-1" variant="info"
                             onClick={this.toggleUserEditModal}>
                             Edit
-                        </button> 
+                        </Button> 
                         
                         {this.state.isEditModalOpen ?
                         <EditPagesFizike
@@ -59,11 +60,13 @@ export class PagesaFizike extends Component {
                         /> 
                         :''}
 
-                        <button className="mr-2" variant="danger"
+                        <Button className="mr-2" variant="danger"
                             onClick={()=>this.deletePagesFizike(this.props.id)}>
                                 Delete
-                        </button>
-                </div>
+                        </Button>
+                        </ButtonToolbar>
+                    </ImportuesCard>
+                
             </div>
         )
 }

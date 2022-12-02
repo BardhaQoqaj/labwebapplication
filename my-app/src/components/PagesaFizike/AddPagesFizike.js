@@ -19,15 +19,14 @@ export class AddPagesFizike extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-        fetch("http://localhost:5000/api/Pagesa",{
+        fetch("http://localhost:5000/api/PagesaOnline",{
         method:"POST",
         headers:{
             'Accept':'application/json',
             'Content-Type':'application/json'
         },
         body:JSON.stringify({
-            Cmimi:event.target.Cmimi.value,
-            Zbritja:event.target.Zbritja.value
+            PiniIKarteles:event.target.PiniIKarteles.value
         })
     })
     .then(res=>res.json())
@@ -45,30 +44,21 @@ export class AddPagesFizike extends Component{
             <div className="container">
                 <div className="modal-content" >
                     <div className="modal-header">
-                        <h3 className="modal-title">Add a Pages Fizike</h3>
+                        <h3 className="modal-title">Shto nje pagese ne forme fizike</h3>
                     </div>
                     <div className="modal-mody">
                         <Form onSubmit={this.handleSubmit}>
 
                             <div className="rows">
-                                <Form.Label>Cmimi:</Form.Label>
-                                <Form.Control type="text" name="Cmimi" 
-                                                required placeholder="Cmimi"/>
+                                <Form.Label>Pini i karteles:</Form.Label>
+                                <Form.Control type="text" name="PiniIKarteles" 
+                                                required placeholder="PiniIKarteles"/>
 
                             </div>
-
-                            
-                            <div className="rows">
-                                <Form.Label>Zbritja:</Form.Label>
-                                <Form.Control type="text" name="Zbritja" 
-                                                required placeholder="Zbritja"/>
-
-                            </div>
-
 
                             <div>
                                 <button type="submit" className="add-btn">
-                                Add Pages Fizike
+                                Shto Pages Fizike
                                 </button>
                             </div> 
 

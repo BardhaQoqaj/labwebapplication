@@ -60,7 +60,7 @@ export class PagesatFizike extends Component {
                 </PagesaFizike>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Pagesa Fizike </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:'140px'}}> Add Pagesa Fizike </Button>
                   {this.state.isModalOpen ? 
                   <AddPagesFizike onClose={this.toggleUserModal}
                   pfid={pfid}

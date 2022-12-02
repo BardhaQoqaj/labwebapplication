@@ -29,8 +29,9 @@
 
 .button{
     font-size: 16px;
-    width: 50px;
+    width: 100px;
     padding: 3px;
+    
 }
 
 .add-btn{
@@ -42,6 +43,7 @@
     width: 70px;
     font-size: 16px;
     padding: 3px;
+    
 }
 .modal-title{
     margin: 0;
@@ -64,22 +66,36 @@
 .mr-2{
     background-color: #ea4c46;
     color: white;
+    border-radius: 10px;
 }
 
 .mr-1{
     color: #01579b;
     margin-right: 10px;
+    border-radius: 10px;
 }
 
 .add-a-state{
     width: 70px;
-    background-color: #ccb7e5;
+    background-color: #797083;
+    border-radius: 10px;
+    padding: 25px;
+    margin-right: 10px;
 }
-.box {
+.holder {
     text-align: left;
-    border: black ridge 1px;
+    border: green ridge 4px;
     border-radius: 10px;
     margin: 3px;
     width: 20rem;
     padding-left: 10px; 
+}
+.holder .box {
+    text-align: left;
+    border: #4e342e ridge 4px;
+    border-radius: 10px;
+    margin: 3px;
+    width: 20rem;
+    padding-left: 10px; 
+    background-color: #a1887f;
 }

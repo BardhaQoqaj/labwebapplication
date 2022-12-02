@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
-
+import { CategoryContainer, CategoryWrapper,
+} from './CategoryElements'
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
 import { AddPages } from './AddPages'
@@ -49,8 +47,8 @@ export class Pagesat extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
+     <CategoryContainer id="states">
+        <CategoryWrapper>
 
             {pagesa.map(pa =>
                 <Pagesa key={pa.id}  
@@ -61,7 +59,7 @@ export class Pagesat extends Component {
                 </Pagesa>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Payment </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:'130px'}}> Add Payment </Button>
                   {this.state.isModalOpen ? 
                   <AddPages onClose={this.toggleUserModal}
                   paid={paid}
@@ -69,11 +67,12 @@ export class Pagesat extends Component {
                   paZbritja={paZbritja}
                   />
                   :''}
-                
+                 </CategoryWrapper> 
+        
+        </CategoryContainer>
         </div> 
         
-    </div>
-    </div>
+   
     )
 }
 }

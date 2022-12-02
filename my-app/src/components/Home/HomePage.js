@@ -40,21 +40,19 @@ function HomePage() {
         </div>
 
         <div className="box-container">
-        <p className="text">Details of our Research:</p>
-        <button>View Details</button>
+        <p className="text">What You Enjoy?</p>
+        <p>You can find yourself in any of the many categories that our website has</p>
+        <p>Get Started Right Now !</p>
+        <button>Sign Up</button>
       </div>
       </div>
 
-      <div className="box-4">
-      <h2 className="text">What You Enjoy?</h2>
+      
 
-       <p>You can find yourself in any of the many categories that our website has</p>
-      </div>
-
-      <div className="box-5">
+      {/* <div className="box-5">
         <p className="text">Get Started Right Now !</p>
         <button>SIGN UP</button>
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+ import { CategoryContainer, CategoryWrapper
+          } from './CategoryElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
@@ -49,8 +48,8 @@ export class Kategorit extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
+    <CategoryContainer id="states">
+        <CategoryWrapper>
 
             {kategoria.map(kat =>
                 <Kategoria key={kat.Kategoria_ID}  
@@ -61,7 +60,7 @@ export class Kategorit extends Component {
                 </Kategoria>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Category </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:'130px'}}> Add Category </Button>
                   {this.state.isModalOpen ? 
                   <AddKategori onClose={this.toggleUserModal}
                   katKategoria_ID={katKategoria_ID}
@@ -69,11 +68,15 @@ export class Kategorit extends Component {
                   
                   />
                   :''}
+
+   </CategoryWrapper> 
+        
+        </CategoryContainer>
                 
         </div> 
         
-    </div>
-    </div>
+   
+   
     )
 }
 }

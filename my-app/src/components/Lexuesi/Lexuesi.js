@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+ import { LexContainer, LexH2,
+     LexPP, LexCard, LexWrapper,
+        LexIdP} from './LexElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 import { EditLexues } from './EditLexues';
+
 
 export class Lexuesi extends Component {
     
@@ -42,16 +43,18 @@ export class Lexuesi extends Component {
 
     render(){
         return (
-            <div className='holder'>
-                <div className="box" key={this.props.id}>
-                    <p>{this.props.emri}</p>
-                    <p>{this.props.mbiemri}</p>
+            <div>
+                <LexCard>
+                <LexIdP key={this.props.id}/>
+                    <LexH2 className='lex-name'>{this.props.emri}</LexH2>
+                    <LexPP>{this.props.mbiemri}</LexPP>
 
                     
-                        <button className="mr-1" variant="info"
+                    <ButtonToolbar>
+                        <Button className="mr-1" variant="info"
                             onClick={this.toggleUserEditModal}>
                             Edit
-                        </button> 
+                        </Button> 
                         
                         {this.state.isEditModalOpen ?
                         <EditLexues
@@ -61,12 +64,14 @@ export class Lexuesi extends Component {
                         /> 
                         :''}
 
-                        <button className="mr-2" variant="danger"
+                        <Button className="mr-2" variant="danger"
                             onClick={()=>this.deleteLexues(this.props.id)}>
                                 Delete
-                        </button>
+                        </Button>
+                        </ButtonToolbar>
+                        </LexCard>
                 </div>
-            </div>
+           
         )
 }
 }

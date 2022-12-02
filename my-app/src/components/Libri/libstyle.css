@@ -4,16 +4,18 @@
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color:#a1887f;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .modal-content{
     width: 500px;
     background-color: #fff;
-    height: 310px;
+    /* height: 900px; */
+    /* background-image: url(../Lexuesi/images/l.jpg); */
 }
 
 .modal-header{
@@ -24,7 +26,7 @@
 .modal-footer{
     position: absolute;
     left: 930px;
-    bottom: 230px;
+    bottom: 200px;
 }
 
 .button{
@@ -37,7 +39,7 @@
     position: absolute;
     left: 530px;
     bottom: 230px;
-    background-color: #add8e6;
+    background-color: #4e342e;
     border: none;
     width: 70px;
     font-size: 16px;
@@ -46,7 +48,7 @@
 .modal-title{
     margin: 0;
     text-align: center;
-    color: #5579c6;
+    color: #3f5ea0;
 }
 
 .modal-body{
@@ -62,18 +64,18 @@
 }
 
 .mr-2{
-    background-color: #ea4c46;
+    background-color: rgb(175, 69, 69);
     color: white;
 }
 
 .mr-1{
-    color: #01579b;
+    color: #00080e;
     margin-right: 10px;
 }
 
 .add-a-state{
     width: 70px;
-    background-color: #ccb7e5;
+    background-color:rgb(29, 146, 29);
 }
 .box {
     text-align: left;
@@ -82,4 +84,18 @@
     margin: 3px;
     width: 20rem;
     padding-left: 10px; 
+}
+.update-btn{
+    margin-left: 20px;
+}
+
+.close-button{
+    padding: 4px;
+    background-color: #b6b5d8;
+}
+
+.modal-edit-footer{
+    position: absolute;
+    left: 930px;
+    bottom: 190px;
 }

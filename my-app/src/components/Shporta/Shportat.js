@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+import { ImportuesiContainer, ImportuesH1, ImportuesiWrapper} from './ImportuesiElements'
+
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
@@ -49,8 +48,9 @@ export class Shportat extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
+     <ImportuesiContainer id="importuesit">
+      <ImportuesH1>Put your favorite books in the wish cart</ImportuesH1>
+        <ImportuesiWrapper>
 
             {shporta.map(sh =>
                 <Shporta key={sh.id}  
@@ -61,7 +61,7 @@ export class Shportat extends Component {
                 </Shporta>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add  Cart </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:'100px'}}> Add  Cart </Button>
                   {this.state.isModalOpen ? 
                   <AddShport onClose={this.toggleUserModal}
                   shid={shid}
@@ -70,9 +70,8 @@ export class Shportat extends Component {
                   />
                   :''}
                 
-        </div> 
-        
-    </div>
+                </ImportuesiWrapper>
+            </ImportuesiContainer>
     </div>
     )
 }

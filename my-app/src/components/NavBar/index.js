@@ -14,15 +14,15 @@ const NavBar = ({toggle}) => {
       <Nav >
         <NavBarContainer >
           <NavLogo to='/'>
-            YourGuide
+            OnlineLibrary
           </NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars/>
           </MobileIcon>
           <NavMenu>
-            {/* <NavItem>
+            <NavItem>
               <NavLinks to="App">About Us</NavLinks>
-            </NavItem> */}
+            </NavItem> 
             <NavItem>
               <NavLinks to="Autoret">Autoret</NavLinks>
             </NavItem>
@@ -46,12 +46,12 @@ const NavBar = ({toggle}) => {
               </NavLinks>
             </NavItem>
           </NavMenu>
-          {/* <NavBtn>
+          <NavBtn>
           <NavLinks to="/signin">Sign In</NavLinks>
           </NavBtn>
           <NavBtn>
             <NavLinks to="/login">Log In</NavLinks>
-          </NavBtn> */}
+          </NavBtn>
         </NavBarContainer>
       </Nav>
     </>

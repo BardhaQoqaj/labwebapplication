@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+ import { ImportuesiContainer, ImportuesH1, ImportuesH2,
+         ImportuesE, ImportuesCard, ImportuesiWrapper,
+         ImportuesS, ImportuesiIdP } from './ImportuesiElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 import { EditImportues } from './EditImportues';
@@ -42,16 +42,18 @@ export class Importuesi extends Component {
 
     render(){
         return (
-            <div className='holder'>
-                <div className="box" key={this.props.id}>
-                    <p>{this.props.Emri}</p>
-                    <p>{this.props.Sasia}</p>
-
+            <div>
+                <ImportuesCard>
+                <ImportuesiIdP key={this.props.id}/>
+                    <ImportuesE>Emri: {this.props.Emri}</ImportuesE>
+                    <ImportuesS>Sasia e importuar: {this.props.Sasia}</ImportuesS>
                     
-                        <button className="mr-1" variant="info"
+                    
+                     <ButtonToolbar>
+                        <Button className="mr-1" variant="info"
                             onClick={this.toggleUserEditModal}>
                             Edit Importues
-                        </button> 
+                        </Button> 
                         
                         {this.state.isEditModalOpen ?
                         <EditImportues
@@ -61,12 +63,14 @@ export class Importuesi extends Component {
                         /> 
                         :''}
 
-                        <button className="mr-2" variant="danger"
+                        <Button className="mr-2" variant="danger"
                             onClick={()=>this.deleteImportues(this.props.id)}>
                                 Delete Importues
-                        </button>
+                        </Button>
+                        </ButtonToolbar>
+                    </ImportuesCard>
                 </div>
-            </div>
+           
         )
 }
 }

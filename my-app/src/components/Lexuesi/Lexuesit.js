@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+ import { LexContainer, LexWrapper,
+         } from './LexElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
@@ -49,8 +48,11 @@ export class Lexuesit extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
+
+     <LexContainer id="lex">
+    <h2 className='lexues'>Readers:</h2>
+       
+        <LexWrapper>
 
             {lexuesi.map(l =>
                 <Lexuesi key={l.id}  
@@ -61,7 +63,7 @@ export class Lexuesit extends Component {
                 </Lexuesi>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Reader </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:'100px'}}> Add Reader </Button>
                   {this.state.isModalOpen ? 
                   <AddLexues onClose={this.toggleUserModal}
                   lid={lid}
@@ -69,11 +71,14 @@ export class Lexuesit extends Component {
                   lmbiemri={lmbiemri}
                   />
                   :''}
-                
+
+                </LexWrapper>
+        
+        </LexContainer> 
+
         </div> 
         
-    </div>
-    </div>
+   
     )
 }
 }

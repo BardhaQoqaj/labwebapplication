@@ -74,6 +74,7 @@
 .add-a-state{
     width: 70px;
     background-color: #ccb7e5;
+    position: center;
 }
 .box {
     text-align: left;

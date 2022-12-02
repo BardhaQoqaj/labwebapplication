@@ -80,4 +80,5 @@ export class EditKategori extends Component{
                 </Modal>
         )
     }
+    
 }

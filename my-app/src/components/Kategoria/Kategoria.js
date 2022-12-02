@@ -1,10 +1,7 @@
-import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+  import React, {Component} from 'react'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
-import { EditKategori } from './EditKtegori';
+import { EditKategori } from './EditKategori';
 
 export class Kategoria extends Component {
     

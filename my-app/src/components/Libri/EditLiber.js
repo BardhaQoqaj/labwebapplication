@@ -1,13 +1,15 @@
 import React,{Component} from "react";
-import {Form} from 'react-bootstrap';
+import {Form,Image} from 'react-bootstrap';
 import {Modal} from 'reactstrap';
-import './style.css';
+import './libstyle.css';
 
 export class EditLiber extends Component{
     constructor(props){
         super(props);
         this.handleSubmit=this.handleSubmit.bind(this);
     }
+ 
+    imagesrc = process.env.REACT_APP_PHOTOPATH + this.filename;
 
     handleSubmit(event){
         event.preventDefault();
@@ -25,6 +27,7 @@ export class EditLiber extends Component{
             Viti:event.target.Viti.value,
             PershkrimiLibrit:event.target.PershkrimiLibrit.value,
             EmriKategorise:event.target.EmriKategorise.value,
+            FileName:this.filename
         })
     })
     .then(res=>res.json())
@@ -36,11 +39,34 @@ export class EditLiber extends Component{
     })
     }
 
+    handleFileSelected(event){
+        event.preventDefault();
+        this.filename=event.target.files[0].name;
+        const formData = new FormData();
+        formData.append(
+            "myFile",
+            event.target.files[0],
+            event.target.files[0].name
+        );
+        fetch("http://localhost:5000/api/Libri/SaveFile",{
+            method:'POST',
+            body:formData
+        })
+        .then(res=>res.json())
+        .then((result)=>{
+            this.imagesrc="http://localhost:5000/Photos/"+result;
+        },
+        (error)=>{
+            alert('photo insertion failed');
+        })
+    }
+
+
     render(){
         return(
                 <Modal isOpen={true}>
                     <div className="container">
-                        <div className="modal-content" >
+                        <div className="modal-content" style={{height: '900px'}}>
                             <div className="modal-header">
                                 <h3 className="modal-title">Edit this Book</h3>
                             </div>
@@ -104,6 +130,12 @@ export class EditLiber extends Component{
                                                     placeholder="EmriKategorise"/>
                                                 </Form.Group>
 
+                                    </div>
+
+                                    <div>
+                                       <Image width="200px" height="200px" 
+                                       src={process.env.REACT_APP_PHOTOPATH+this.props.filename}/>
+                                       <input onChange={this.handleFileSelected} type="File"/>
                                     </div>
 
                                                 <Form.Group>

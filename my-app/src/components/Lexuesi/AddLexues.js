@@ -42,26 +42,27 @@ export class AddLexues extends Component{
     render(){
         return(
             <Modal isOpen={true}>
-            <div className="container">
-                <div className="modal-content" >
-                    <div className="modal-header">
+            <div className="container" >
+                <div className="modal-content">
+                    <div className="modal-header" >
                         <h3 className="modal-title">Add a Reader</h3>
                     </div>
                     <div className="modal-mody">
                         <Form onSubmit={this.handleSubmit}>
 
                             <div className="rows">
-                                <Form.Label>emri:</Form.Label>
+                                <Form.Label>Emri:</Form.Label>
                                 <Form.Control type="text" name="emri" 
                                                 required placeholder="emri"/>
 
                             </div>
                             <div className="rows">
-                                <Form.Label>mbiemri:</Form.Label>
+                                <Form.Label>Mbiemri:</Form.Label>
                                 <Form.Control type="text" name="mbiemri" 
                                                 required placeholder="mbiemri"/>
 
                             </div>
+                            
 
                             <div>
                                 <button type="submit" className="add-btn">

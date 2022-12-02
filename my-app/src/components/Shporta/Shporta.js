@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
-
+import { ImportuesiContainer, ImportuesH1, ImportuesH2,
+    ImportuesE, ImportuesCard, ImportuesiWrapper,
+    ImportuesS, ImportuesiIdP } from './ImportuesiElements'
 import { Button, ButtonToolbar } from 'react-bootstrap'
 import { EditShport } from './EditShport';
 
@@ -42,16 +41,17 @@ export class Shporta extends Component {
 
     render(){
         return (
-            <div className='holder'>
-                <div className="box" key={this.props.id}>
-                    <p>{this.props.sasia}</p>
-                    <p>{this.props.libri}</p>
+            <div>
+                <ImportuesCard>
+                <ImportuesiIdP key={this.props.id}/>
+                    <ImportuesE>Sasia qe deshironi:{this.props.sasia}</ImportuesE>
+                    <ImportuesS>Titulli i Librit:{this.props.libri}</ImportuesS>
 
-                    
-                        <button className="mr-1" variant="info"
+                    <ButtonToolbar>
+                        <Button className="mr-1" variant="info"
                             onClick={this.toggleUserEditModal}>
                             Edit
-                        </button> 
+                        </Button> 
                         
                         {this.state.isEditModalOpen ?
                         <EditShport
@@ -61,11 +61,12 @@ export class Shporta extends Component {
                         /> 
                         :''}
 
-                        <button className="mr-2" variant="danger"
+                        <Button className="mr-2" variant="danger"
                             onClick={()=>this.deleteShport(this.props.id)}>
                                 Delete
-                        </button>
-                </div>
+                        </Button>
+                        </ButtonToolbar>
+                    </ImportuesCard>
             </div>
         )
 }

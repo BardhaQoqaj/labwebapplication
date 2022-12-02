@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+ import { LibriH2,
+         LibriD, LibriCard, LibriWrapper,
+          LibriIdP, LibriV,LibriPP, LibriE,LibriIcon,OptionsP} from './LibriElements'
 
-import { Button, ButtonToolbar } from 'react-bootstrap'
+import { Button, ButtonToolbar,Image } from 'react-bootstrap'
+//import axios from 'axios'
 import { EditLiber } from './EditLiber';
 
 export class Libri extends Component {
@@ -19,9 +20,12 @@ export class Libri extends Component {
             Viti : [],
             PershkrimiLibrit : [],
             EmriKategorise : [],
+            FileName : [],
+            imagesrc: [],
             isEditModalOpen : false
         };
     }
+    imagesrc = process.env.REACT_APP_PHOTOPATH + this.props.FileName;
     
     toggleUserEditModal = ()=>{
         this.setState((state)=>{
@@ -46,20 +50,22 @@ export class Libri extends Component {
 
     render(){
         return (
-            <div className='holder'>
-                <div className="box" key={this.props.Libri_ID}>
-                    <p>{this.props.Titulli}</p>
-                    <p>{this.props.Faqet}</p>
-                    <p>{this.props.Disponueshmeria}</p>
-                    <p>{this.props.Viti}</p>
-                    <p>{this.props.PershkrimiLibrit}</p>
-                    <p>{this.props.EmriKategorise}</p>
+            <div>
+                <LibriCard>
+                <LibriIcon src={"/images/" + this.props.FileName} ></LibriIcon>
+                <LibriIdP key={this.props.Libri_ID}/>
+                    <LibriH2>Titulli: {this.props.Titulli}</LibriH2>
+                    <LibriH2>Nr.Faqeve:  {this.props.Faqet}</LibriH2>
+                    <LibriD>Disponueshmeria: {this.props.Disponueshmeria}</LibriD>
+                    <LibriV>Viti Botimit: {this.props.Viti}</LibriV>
+                    <LibriPP>Pershkrim i Librit: {this.props.PershkrimiLibrit}</LibriPP>
+                    <LibriE>Kategoria: {this.props.EmriKategorise}</LibriE>
 
-                    
-                        <button className="mr-1" variant="info"
+                    <ButtonToolbar>
+                        <Button className="mr-1" variant="info"
                             onClick={this.toggleUserEditModal}>
                             Edit Book
-                        </button> 
+                        </Button> 
                         
                         {this.state.isEditModalOpen ?
                         <EditLiber
@@ -69,12 +75,15 @@ export class Libri extends Component {
                         /> 
                         :''}
 
-                        <button className="mr-2" variant="danger"
+                        <Button className="mr-2" variant="danger"
                             onClick={()=>this.deleteLiber(this.props.Libri_ID)}>
                                 Delete
-                        </button>
+                        </Button>
+                    </ButtonToolbar>
+                    </LibriCard>
+                
                 </div>
-            </div>
+            
         )
 }
 }

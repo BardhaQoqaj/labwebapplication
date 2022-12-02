@@ -42,7 +42,7 @@ export class AddAutor extends Component{
     render(){
         return(
             <Modal isOpen={true}>
-            <div className="container">
+            <div className="container" >
                 <div className="modal-content" >
                     <div className="modal-header">
                         <h3 className="modal-title">Add a Author</h3>

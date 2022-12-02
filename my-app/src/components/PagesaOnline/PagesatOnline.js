@@ -1,8 +1,5 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
-
+import { CategoryContainer, CategoryWrapper} from './CategoryElements'
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
 import { AddPagesOnline } from './AddPagesOnline'
@@ -49,8 +46,8 @@ export class PagesatOnline extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
+    <CategoryContainer id="states">
+        <CategoryWrapper>
 
             {pagesaonline.map(pao =>
                 <PagesaOnline key={pao.id}  
@@ -60,17 +57,17 @@ export class PagesatOnline extends Component {
                 </PagesaOnline>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Pages Online </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:'140px'}}> Add Pages Online </Button>
                   {this.state.isModalOpen ? 
                   <AddPagesOnline onClose={this.toggleUserModal}
                   paoid={paoid}
                   paoNrKarteles={paoNrKarteles}
                   />
                   :''}
-                
-        </div> 
+       </CategoryWrapper> 
         
-    </div>
+        </CategoryContainer>
+                
     </div>
     )
 }

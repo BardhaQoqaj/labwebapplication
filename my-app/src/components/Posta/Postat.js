@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
-
+import { CategoryContainer, CategoryWrapper
+} from './CategoryElements'
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
 import { AddPost } from './AddPost'
@@ -49,9 +47,8 @@ export class Postat extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
-
+   <CategoryContainer id="states">
+        <CategoryWrapper>
             {posta.map(po =>
                 <Posta key={po.id}  
                 id={po.id} 
@@ -60,7 +57,7 @@ export class Postat extends Component {
                 </Posta>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Post </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:'100px'}}> Add Post </Button>
                   {this.state.isModalOpen ? 
                   <AddPost onClose={this.toggleUserModal}
                   poid={poid}
@@ -68,9 +65,9 @@ export class Postat extends Component {
                   />
                   :''}
                 
-        </div> 
+                </CategoryWrapper> 
         
-    </div>
+        </CategoryContainer>
     </div>
     )
 }

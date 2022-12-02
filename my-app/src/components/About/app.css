@@ -1,0 +1,15 @@
+.container{
+    position: relative;
+    display: block;
+    background-color: inherit;
+
+}
+
+.contain2{
+    display: flex;
+    background-color: #3bafcf;
+}
+
+footer{
+    background-color: #3bafcf;
+}

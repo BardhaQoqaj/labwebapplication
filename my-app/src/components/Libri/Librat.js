@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+ import { LibriContainer, LibriH1,LibriWrapper,} from './LibriElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
+
 
 import { AddLiber } from './AddLiber'
 import { Libri } from './Libri'
@@ -45,13 +44,13 @@ export class Librat extends Component {
     }
 
     render(){
-        const {libri,libLibri_ID,libTitulli,libFaqet,libDisponueshmeria,libViti,libPershkrimiLibrit,libEmriKategorise}=this.state;
+        const {libri,libLibri_ID,libTitulli,libFaqet,libDisponueshmeria,libViti,libPershkrimiLibrit,libEmriKategorise,file}=this.state;
 
     return (
     <div>
-    <div id="states">
-        <div>
-
+        <LibriContainer id="librat">
+            <LibriH1>Popular Books in the liking of Readers</LibriH1>
+    <LibriWrapper>
             {libri.map(lib =>
                 <Libri key={lib.Libri_ID}  
                 Libri_IDd={lib.Libri_ID} 
@@ -76,13 +75,15 @@ export class Librat extends Component {
                   libViti={libViti}
                   libPershkrimiLibrit={libPershkrimiLibrit}
                   libEmriKategorise={libEmriKategorise}
+                  file={file}
                   />
                   :''}
-                
+                </LibriWrapper>
+            </LibriContainer>
         </div> 
         
-    </div>
-    </div>
+
+    
     )
 }
 }
